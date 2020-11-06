@@ -1,0 +1,50 @@
+!function(w, d){
+    function imgSrcToElement(src, type, d) {
+        var img = d.createElement('img');
+        img.height = 1;
+        img.width = 1;
+        img.style.display = 'none';
+        img.src = src;
+        img.alt = '';
+        return img;
+    }
+    function scriptSrcToElement(w, d, t, u) {
+        var a = d.createElement(t);
+        a.async = true;
+        a.crossorigin = 'anonymous';
+        a.src = u;
+        var s = d.getElementsByTagName(t)[0];
+        s.parentNode.insertBefore(a, s);
+    }
+    (function (d) {
+        var pixels = JSON.parse('[["apn", "https://secure.adnxs.com/getuid?https://ids.ad.gt/api/v1/match?id=37b630c8-8a9d-41a2-b8d0-c7925568d89e&adnxs_id=$UID"], ["ttd", "https://match.adsrvr.org/track/cmf/generic?ttd_pid=8gkxb6n&ttd_tpi=1&gpdr=0&ttd_puid=37b630c8-8a9d-41a2-b8d0-c7925568d89e"], ["pub", "https://image2.pubmatic.com/AdServer/UCookieSetPug?rd=https%3A%2F%2Fids.ad.gt%2Fapi%2Fv1%2Fpbm_match%3Fpbm%3D%23PM_USER_ID%26id%3D37b630c8-8a9d-41a2-b8d0-c7925568d89e"], ["adx", "https://cm.g.doubleclick.net/pixel?google_nid=audigent_w_appnexus_3985&google_cm&google_sc&google_ula=450542624&id=37b630c8-8a9d-41a2-b8d0-c7925568d89e"], ["goo", "https://ids.ad.gt/api/v1/g_hosted?id=37b630c8-8a9d-41a2-b8d0-c7925568d89e"]]');
+        pixels.forEach(function (pixel_with_type) {
+            var t = pixel_with_type[0];
+            var p = pixel_with_type[1];
+            if (t === 'fplus' || t === 'halo') {
+                scriptSrcToElement(w, d, 'script', p);
+            } else {
+                var img = imgSrcToElement(p, t, d);
+                d.body.appendChild(img);
+            }
+        })
+    })(d);
+    (function (w, d, t, u) {
+        w.auvars = w.auvars || {};
+        w.auvars['158'] = {
+            t: '3efa66331b700d23db83d6c46d61829b',
+            p: '158',
+            a: '37b630c8-8a9d-41a2-b8d0-c7925568d89e',
+            ty: 'passive'
+        };
+        w.auvars.t = '3efa66331b700d23db83d6c46d61829b';
+        w.auvars.p = '158';
+        w.auvars.a = '37b630c8-8a9d-41a2-b8d0-c7925568d89e';
+        w.auvars.ty = 'passive';
+        var a = d.createElement(t);
+        a.defer = true;
+        a.src = u;
+        var s = d.getElementsByTagName(t)[0];
+        s.parentNode.insertBefore(a, s);
+    })(w, d, 'script', 'https://p.ad.gt/api/v1/p/158');
+}(window, document);

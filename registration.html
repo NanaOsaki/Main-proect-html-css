@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Регистрация</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+    <div class="registration">
+        <h1>Регистрация</h1>
+    </div>
+    <form autocomplete="on" name="registration">
+        <div class="reg-item">
+            <label for="login">Введите логин:</label> 
+            <input type="text" id="login" minlength="4" maxlength="10" required> 
+        </div>
+        <div class="reg-item">
+            <label for="email">Введите почту:</label>
+            <input type="email" id="email" required>
+        </div>
+        <div class="reg-item">
+            <label for="pass">Введите пароль:</label>
+            <input type="password" id="pass" minlength="4" maxlength="10" required>
+        </div>
+        <div class="reg-item">
+            <label for="pass2">Подтвердите пароль:</label>
+            <input type="password" id="pass2" minlength="4" maxlength="10" required>
+        </div> 
+        <div class="reg-item">
+            <label for="avatar">Загрузите фотографию</label>
+            <button form="avatar">Выберите файл</button>
+        </div>
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+</body>
+</html>
